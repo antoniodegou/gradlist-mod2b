@@ -13,3 +13,5 @@ for(let i = 0; i < keys.length; i++) {
    //add to data list DOM
    document.getElementById('datalistOptions').appendChild(el);
 }
+
+export default keys
