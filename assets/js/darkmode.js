@@ -16,8 +16,8 @@ const toggleTheme = () => !document.body.classList.contains('dark-mode') ? addDa
 const checkPreference = () => window.matchMedia('(prefers-color-scheme: dark)').matches ? addDarkMode() : addLightMode()
 
 // event listener for system preferences and button
-  document.getElementById('my_switch').addEventListener('change', toggleTheme)
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', checkPreference)
+document.getElementById('my_switch').addEventListener('change', toggleTheme)
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', checkPreference)
 
 // immediately check for system preferences so it starts in the right dark/light theme
 {(() => checkPreference())()}
