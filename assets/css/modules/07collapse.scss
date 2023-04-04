@@ -1,0 +1,40 @@
+.collapse-title{
+    position: relative; 
+}
+.collapse-title[aria-expanded="true"]   .icon-arrow_right{
+    position: absolute;
+    top:-1px;
+    font-size: 2rem;
+    transform: rotate(450deg)!important;
+    transition: all $transition-time;
+}
+
+.collapse-title[aria-expanded="false"]  .icon-arrow_right{
+    position: absolute;
+    top:-1px;
+    font-size: 2rem;
+    transform: rotate(0deg)!important;
+    transition: all $transition-time;
+}
+
+
+input[type="radio"]{
+    border-radius: 50%!important;
+    height:32px; 
+    width:32px;
+}
+
+.form-check-label{
+    height: 32px!important;
+   
+}
+.form-check-input:checked {
+    background-color: $accent;
+}
+.form-check-input:checked[type=radio]{
+    background-image: unset;
+    background: $accent;
+}
+#beforeList, #beforeHEX{
+    border-right: unset!important;
+  }
