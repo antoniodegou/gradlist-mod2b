@@ -26,8 +26,6 @@ const outputList = ()=> {
     if(intRGB){ mySpace = 'srgb'}
     if(intHSL){ mySpace = 'hsl'}
 
-    const beforeList = document.getElementById('beforeList').value
-    const afterList = document.getElementById('afterList').value
     const intSteps  = document.getElementById('intSteps').value
 
     const formatRGB = document.getElementById('rgbformat-input').checked
@@ -38,6 +36,19 @@ const outputList = ()=> {
     let thelist =[];
 
     if(formatHEX){
+        ifHEX(finallist,mySpace, thelist,intSteps)
+        
+    }else if(formatRGB){
+        ifRGB(finallist, mySpace, thelist, intSteps)
+
+    }else if(formatHSL){
+        ifHSL(finallist, mySpace, thelist, intSteps)
+
+    }
+}
+const ifHEX = (finallist, mySpace, thelist, intSteps) => {
+    const beforeList = document.getElementById('beforeList').value
+    const afterList = document.getElementById('afterList').value
         //get the value of hex that from the user
         const beforeHEX = document.getElementById('beforeHEX').value
         const afterHEX = document.getElementById('afterHEX').value
@@ -79,7 +90,7 @@ const outputList = ()=> {
             }
 
             // Take the afterHEX out of the last element,
-            thelist[ thelist.length-1] = thelist[thelist.length-1].replace(afterHEX,'')
+            thelist[ thelist.length-1 ] = thelist[thelist.length-1].replace(afterHEX,'')
             // Add to swatches
             thelist.forEach(hey =>{
                 yourPreview.innerHTML += `<div class="swatch d-inline-block" style="background-color:${hey.replace(afterHEX,'')}"></div>`
@@ -87,8 +98,11 @@ const outputList = ()=> {
             // Add to preview
             yourList.innerHTML = `<pre>${beforeList}<br>${thelist.join('') }<br>${afterList}</pre>`
         }
+}
 
-    }else if(formatRGB){
+const ifRGB = (finallist, mySpace, thelist, intSteps) => {
+    const beforeList = document.getElementById('beforeList').value
+    const afterList = document.getElementById('afterList').value
         // Get the options for RGB
         const beforeRed= document.getElementById('beforeRed').value
         const beforeGreen= document.getElementById('beforeGreen').value
@@ -146,9 +160,11 @@ const outputList = ()=> {
             yourList.innerHTML = `<pre>${beforeList}<br>${thelist.join('') }<br>${afterList}</pre>`
         }
 
+}
 
-
-    }else if(formatHSL){
+const ifHSL = (finallist, mySpace, thelist, intSteps) => {
+    const beforeList = document.getElementById('beforeList').value
+    const afterList = document.getElementById('afterList').value
         // Get the options for HSL values
         const beforeH = document.getElementById('beforeH').value
         const beforeS = document.getElementById('beforeS').value
@@ -209,8 +225,6 @@ const outputList = ()=> {
             //add to preview
             yourList.innerHTML = `<pre>${beforeList}<br>${thelist.join('') }<br>${afterList}</pre>`
         }
-    }
-
 }
 
 export default outputList
