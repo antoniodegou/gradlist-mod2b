@@ -4,15 +4,16 @@
   color: $white-2;
   border-color: $white-1!important;
   transition: all $transition-time;
-  .mybox{
-      background-color:$black-1;
- }
+ 
   .collapse-title{
-      color:$white-1;
- }
+    color:$white-1;
+  }
   .mybox{
+    background-color:$black-1;
       border-top: solid $border-width $black-3 !important;
       border-left: solid $border-width $black-3 !important;
+      border-bottom:solid $border-width $black-0 !important;
+      border-right:solid $border-width $black-0 !important;
  }
   input{
       border: solid $border-width $white-1 !important;
@@ -76,13 +77,13 @@
   $invalid:red;
   $valid: green;
   transition: all $transition-time!important;
+ 
   .mybox{
-      background-color:$white-1;
- }
-  .mybox{
+    background-color:$white-1;
       border-top: solid $border-width $white-3 !important;
       border-left: solid $border-width $white-3 !important;
-      border-right: unset!important;
+      border-bottom:solid $border-width $white-0 !important;
+      border-right:solid $border-width $white-0 !important;
  }
   .collapse-title{
       color:$black-1;
