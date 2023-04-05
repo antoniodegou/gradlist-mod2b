@@ -1,174 +1,134 @@
-/* ------
-general inputs
--------*/
-
+/* ------ general inputs -------*/
 input{
-    border-radius: 0!important;
-    text-align: center;
-    transition: background-color $transition-time;
+  border-radius: 0!important;
+  text-align: center;
+  transition: background-color $transition-time;
 }
-
 input:focus{
-    transition: background-color $transition-time;
+  transition: background-color $transition-time;
 }
-
-/* ------
-tooltips
--------*/
-
-  .custom-tooltip.tooltip > .tooltip-inner{
-    background: $accent;
-    color: $black-4;
-    border-radius: 0;
-    box-shadow: 0px 2px 4px rgba(22, 22, 22, 0.6);
-    font-size: .7rem;
-  }
-
-  .custom-tooltip.tooltip > .tooltip-arrow::before{
-    color: $black-1;
-    border-top-color: $accent;
-  }
-
-  /*
-  colour picker
-  */
-
-  #mypick{
-    position: relative;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    height: 42px!important;
-    background-color: transparent;
-    border:none;
-    cursor: pointer;
-    padding:0;
-    border-radius: $border-radius!important;
-    }
-    
-    #mypick::-moz-color-swatch{
-      border:none;
-      border: 0;
-      border-radius: $border-radius!important;
-    }
-    
-    #mypick::-webkit-color-swatch{
-      border:none;
-      border: 0;
-      border-radius: $border-radius!important;
-    }
-
-    #mypick::-webkit-color-swatch::before   {
-        position: absolute;
-        left:0;
-        top: 0;
-    }
-
-    #mypick::-moz-color-swatch::before{
-      position: absolute;
-      left:0;
-      top: 0;
-    }
-
-    
-    #mypick::-webkit-color-swatch-wrapper {
-        padding: 0;
-    }
-
-    #mypick::before{
-        position: absolute!important;
-        content: "\e90a"!important;
-        font-family: 'icomoon'!important;
-        width: 42px!important;
-        height: 42px;
-        border-radius: 50%!important;
-        text-align: center!important;
-        margin:  auto 0!important;
-        top: 0!important;
-        bottom: 0!important;
-        right: -3px!important;    
-        box-shadow: unset!important;
-        padding-top: 7px!important;
-    }
-
-  /*
-add button
-  */
-
-  .my_submit{
-    border-radius: $border-radius!important;
-    text-transform: uppercase;
+/* ------ tooltips -------*/
+.custom-tooltip.tooltip > .tooltip-inner{
+  background: $accent;
+  color: $black-4;
+  border-radius: 0;
+  box-shadow: 0px 2px 4px rgba(22, 22, 22, 0.6);
+  font-size: .7rem;
 }
-    
-
-/*
-input number
-*/
-
-    input[type=number]::-webkit-inner-spin-button, 
-    input[type=number]::-webkit-outer-spin-button { 
-      -webkit-appearance: none; 
-      margin: 0; 
-    }
-
-/*
-invalid fields
-*/
-    .invalid + *:before{
-        position: absolute;
-        content: "\e903";
-        font-family: 'icomoon';
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        text-align: center;
-        margin:  auto 0;
-        top: 0px; 
-         bottom: 22px; 
-         right: 10px;
-        z-index: 1000!important;
-        transform: rotate(270deg);
-        transition: all $transition-time;
-        padding-top: 3px;
-      } 
-
-    .valid + *:before{
-        position: absolute;
-        content: "\e904";
-        font-family: 'icomoon';
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        text-align: center;
-        margin:  auto 0;
-        top: 0px; 
-         bottom: 22px; 
-         right: 10px;
-         transform: rotate(0deg);
-        z-index: 1000!important;
-        transition: all $transition-time;
-        padding-top: 3px;
-    }
-
-/*
-submit
-*/
+.custom-tooltip.tooltip > .tooltip-arrow::before{
+  color: $black-1;
+  border-top-color: $accent;
+}
+/* colour picker */
+#mypick{
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 42px!important;
+  background-color: transparent;
+  border:none;
+  cursor: pointer;
+  padding:0;
+  border-radius: $border-radius!important;
+}
+#mypick::-moz-color-swatch{
+  border:none;
+  border: 0;
+  border-radius: $border-radius!important;
+}
+#mypick::-webkit-color-swatch{
+  border:none;
+  border: 0;
+  border-radius: $border-radius!important;
+}
+#mypick::-webkit-color-swatch::before {
+  position: absolute;
+  left:0;
+  top: 0;
+}
+#mypick::-moz-color-swatch::before{
+  position: absolute;
+  left:0;
+  top: 0;
+}
+#mypick::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+#mypick::before{
+  position: absolute!important;
+  content: "\e90a"!important;
+  font-family: 'icomoon'!important;
+  width: 42px!important;
+  height: 42px;
+  border-radius: 50%!important;
+  text-align: center!important;
+  margin: auto 0!important;
+  top: 0!important;
+  bottom: 0!important;
+  right: -3px!important;
+  box-shadow: unset!important;
+  padding-top: 7px!important;
+}
+/* add button */
+.my_submit{
+  border-radius: $border-radius!important;
+  text-transform: uppercase;
+}
+/* input number */
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* invalid fields */
+.invalid + *:before{
+  position: absolute;
+  content: "\e903";
+  font-family: 'icomoon';
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  margin: auto 0;
+  top: 0px;
+  bottom: 22px;
+  right: 10px;
+  z-index: 1000!important;
+  transform: rotate(270deg);
+  transition: all $transition-time;
+  padding-top: 3px;
+}
+.valid + *:before{
+  position: absolute;
+  content: "\e904";
+  font-family: 'icomoon';
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  margin: auto 0;
+  top: 0px;
+  bottom: 22px;
+  right: 10px;
+  transform: rotate(0deg);
+  z-index: 1000!important;
+  transition: all $transition-time;
+  padding-top: 3px;
+}
+/* submit */
 #submit{
-    transition: all 1s ;
-    height: 42px;
-    transition: all 1s ;
-} 
-
+  transition: all 1s ;
+  height: 42px;
+  transition: all 1s ;
+}
 #copy{
   height: 42px;
 }
-
 .remove:before{
   position: absolute;
   content: "\e905";
   font-family: 'icomoon';
-  top: auto; 
+  top: auto;
   left: auto;
   right: auto;
 }
-
