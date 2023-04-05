@@ -1,4 +1,4 @@
-import spotColList from '/assets/js/addRemove'
+
 
 /*
 // Add colours to the preview

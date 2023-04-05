@@ -7,17 +7,17 @@ let listOptions = document.querySelectorAll(".list-options")
 const yourList = document.getElementById('my-list')
 const yourPreview = document.getElementById('swatches-preview')
 
-listOptions.forEach( elem => {
+document.querySelectorAll(".list-options").forEach( elem => {
     elem.addEventListener('change', (e) =>{
         e.preventDefault();
-        outputList(spotColList)
+        outputList( spotColList)
     })
 })
 
 /*
 // Handle Options for the final list
 */
-const outputList = (spotColList)=> {
+const outputList = ( spotColList2 )=> {
 
     const intRGB = document.getElementById('rgbInterpolation').checked
     const intHSL = document.getElementById('hslInterpolation').checked
@@ -37,17 +37,19 @@ const outputList = (spotColList)=> {
     let thelist =[];
 
     if(formatHEX){
-        ifHEX(finallist, mySpace, thelist,intSteps,spotColList)
+        ifHEX(finallist, mySpace, thelist, intSteps ,spotColList2)
         
     }else if(formatRGB){
-        ifRGB(finallist, mySpace, thelist, intSteps,spotColList)
+        ifRGB(finallist, mySpace, thelist, intSteps,spotColList2 )
 
     }else if(formatHSL){
-        ifHSL(finallist, mySpace, thelist, intSteps,spotColList)
+        ifHSL(finallist, mySpace, thelist, intSteps,spotColList2 )
 
     }
 }
-const ifHEX = (finallist, mySpace, thelist, intSteps,spotColList) => {
+const ifHEX = (finallist, mySpace, thelist, intSteps ,spotColList) => {
+
+    console.log(spotColList)
     const beforeList = document.getElementById('beforeList').value
     const afterList = document.getElementById('afterList').value
         //get the value of hex that from the user
@@ -56,6 +58,10 @@ const ifHEX = (finallist, mySpace, thelist, intSteps,spotColList) => {
         // re init the preview HTML
         yourPreview.innerHTML = ''
         // if the list only has one element chose that one colour for preview and colour list
+        if(spotColList.length == 0){
+            yourList.innerHTML = `<pre>${beforeList}<br> <br>${afterList}</pre>`
+        }
+
         if(spotColList.length == 1){
             finallist = document.getElementById('hex_code').value;
             yourPreview.innerHTML += `<div class="swatch d-inline-block" style="background-color:#${finallist}"></div>`
@@ -101,7 +107,7 @@ const ifHEX = (finallist, mySpace, thelist, intSteps,spotColList) => {
         }
 }
 
-const ifRGB = (finallist, mySpace, thelist, intSteps,spotColList) => {
+const ifRGB = (finallist, mySpace, thelist, intSteps,spotColList ) => {
     const beforeList = document.getElementById('beforeList').value
     const afterList = document.getElementById('afterList').value
         // Get the options for RGB
@@ -113,6 +119,9 @@ const ifRGB = (finallist, mySpace, thelist, intSteps,spotColList) => {
         const afterBlue = document.getElementById('afterBlue').value
         // reset HTML preview
         yourPreview.innerHTML = ''
+        if(spotColList.length == 0){
+            yourList.innerHTML = `<pre>${beforeList}<br> <br>${afterList}</pre>`
+        }
         // Check if the list had only 1 element
         if(spotColList.length == 1){
             finallist = document.getElementById('hex_code').value;
@@ -163,7 +172,7 @@ const ifRGB = (finallist, mySpace, thelist, intSteps,spotColList) => {
 
 }
 
-const ifHSL = (finallist, mySpace, thelist, intSteps,spotColList) => {
+const ifHSL = (finallist, mySpace, thelist, intSteps,spotColList ) => {
     const beforeList = document.getElementById('beforeList').value
     const afterList = document.getElementById('afterList').value
         // Get the options for HSL values
@@ -176,6 +185,9 @@ const ifHSL = (finallist, mySpace, thelist, intSteps,spotColList) => {
 
         yourPreview.innerHTML = '' // Reset preview HTML
         // Check if list only has one element
+        if(spotColList.length == 0){
+            yourList.innerHTML = `<pre>${beforeList}<br> <br>${afterList}</pre>`
+        }
         if(spotColList.length == 1){
             finallist = document.getElementById('hex_code').value;
             yourPreview.innerHTML += ` <div class="swatch d-inline-block" style="background-color:#${finallist}"></div>`
