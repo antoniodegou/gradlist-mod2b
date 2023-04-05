@@ -1,8 +1,6 @@
 import colPreview from '/assets/js/coloursPreview'
 import outputList from '/assets/js/listOptions'
 import addSpotColourDOM from '/assets/js/addSpotColourDOM'
-import Color from "colorjs.io"
-import * as convert from 'color-convert'
 
 let spotColList = []
 
@@ -50,7 +48,7 @@ const removeButtonListener = (e) => {
 }
 
 
-
+// event listener for user's colour option list
 document.querySelectorAll(".list-options").forEach( elem => {
     elem.addEventListener('change', (e) =>{
         e.preventDefault();
@@ -58,4 +56,10 @@ document.querySelectorAll(".list-options").forEach( elem => {
     })
 })
  
- 
+// event for the copy button that copies the list to clipboard
+document.getElementById('copy').addEventListener('click', e => {
+    e.preventDefault()
+    // ref https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+    var copyText = document.getElementById('my-list')
+    navigator.clipboard.writeText(copyText.innerText)
+})
