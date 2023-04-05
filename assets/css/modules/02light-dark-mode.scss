@@ -7,12 +7,15 @@ DEFINE COLOURS FOR COLOUR MODES
     color: $white-2;
     border-color: $white-1!important;
     transition: all $transition-time;
+
     .mybox{
       background-color:$black-1;
     }
+
     .collapse-title{
       color:$white-1;
     }
+
     .mybox{
       border-top: solid $border-width $black-3 !important;
       border-left: solid $border-width $black-3 !important;
@@ -76,7 +79,16 @@ DEFINE COLOURS FOR COLOUR MODES
     .invalid + *:before{
       color:	$invalid;
     }
-  
+    #submit:hover, #copy:hover{
+      height:42px;
+      transition: all $transition-time;
+    }
+    #submit:hover, #copy:hover{
+      // border: solid calc($border-width + 1px) $white-1!important;
+      background-color: $black-3;
+      height:44px;
+      transition: all 0.1s;
+    }
     
   }
   
@@ -174,6 +186,17 @@ DEFINE COLOURS FOR COLOUR MODES
   #copy{
     color: $black-2;
   }
+  #submit:hover, #copy:hover{
+    height:42px;
+    transition: all $transition-time;
+  }
+  #submit:hover, #copy:hover{
+    // border: solid calc($border-width + 1px) $white-1!important;
+    background-color: $white-3;
+    height:44px;
+    transition: all 0.1s;
+  }
+  
 
 
   }
