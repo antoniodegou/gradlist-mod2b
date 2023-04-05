@@ -15,12 +15,12 @@
 I used [W3C](https://validator.w3.org/) to validator the HTML. 
 I got one warning for having two values on the attribute `data-icon`. But because it works, I left it as it is because I needed two icons for these input fields.
 
-[HTML validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fantoniodegou.github.io%2Fgradlist-mod2%2F)
+[HTML validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fantoniodegou.github.io%2Fgradlist-mod2b%2F)
 
 
 The CSS error is all related to Bootstrap, not my code.
 
-[CSS validation](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fantoniodegou.github.io%2Fgradlist-mod2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=pt-BR)
+[CSS validation](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fantoniodegou.github.io%2Fgradlist-mod2b%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=pt-BR)
 
 
 
@@ -74,12 +74,6 @@ Due to its nature, it will not live-reload as soon as there is any error on CSS 
 The colour picker works in all instances, and all the other inputs get converted from the colour picker colour.
 
 
-### Header
-
-Toggle (dark/light mode) works in all devices that I tested in as well as all the browsers.
-It all captures users light/dark preferences and presents that first.
-
-
 ### Spot Colours Section
 
 * Visualise added colours
@@ -97,7 +91,7 @@ The final list, as well as colour swatches, get updated.
 Gradient previews get updated with the "add colours" or "remove colours" buttons.
 
 
-### List options
+### List options Section
 
 * change gradient mode
 * changing gradient steps between colours
@@ -110,7 +104,7 @@ The text fields are added to the list.
 And the radio inputs affect the colour formats or the gradient format.
 
 
-4. Your List
+### Your List Section
 * visualise list
 
 The list changed with all the changes in the input fields or adding or removing colours.
@@ -130,7 +124,9 @@ Copy button always works as long as there is text.
 
 I used Hoverify, which allows me to test several devices simultaneously in live time. 
 
-![Lighhouse](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/hoverify.jpg)
+![vertical](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/hoverify1.jpg)
+
+![horizontal](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/hoverify2.jpg)
 
 ---
 ## Bugs
