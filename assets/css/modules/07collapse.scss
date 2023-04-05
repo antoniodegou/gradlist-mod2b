@@ -1,32 +1,27 @@
 .collapse-title{
-    position: relative; 
+    position: relative;
 }
-.collapse-title[aria-expanded="true"]   .icon-arrow_right{
+.collapse-title[aria-expanded="true"] .icon-arrow_right{
     position: absolute;
     top:-1px;
     font-size: 2rem;
     transform: rotate(450deg)!important;
     transition: all $transition-time;
 }
-
-.collapse-title[aria-expanded="false"]  .icon-arrow_right{
+.collapse-title[aria-expanded="false"] .icon-arrow_right{
     position: absolute;
     top:-1px;
     font-size: 2rem;
     transform: rotate(0deg)!important;
     transition: all $transition-time;
 }
-
-
 input[type="radio"]{
     border-radius: 50%!important;
-    height:32px; 
+    height:32px;
     width:32px;
 }
-
 .form-check-label{
     height: 32px!important;
-   
 }
 .form-check-input:checked {
     background-color: $accent;
@@ -37,4 +32,4 @@ input[type="radio"]{
 }
 #beforeList, #beforeHEX{
     border-right: unset!important;
-  }
+}
