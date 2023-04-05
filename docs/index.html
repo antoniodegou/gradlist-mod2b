@@ -112,29 +112,29 @@
                           <fieldset>
                             <legend> Gradient Interpolation Mode</legend>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input list-options" type="radio" name="interpolation" id="rgbInterpolation" value="rgbInterpolation" checked>
+                                <input class="form-check-input list-options-radio" type="radio" name="interpolation" id="rgbInterpolation" value="rgbInterpolation" checked>
                                 <label class="form-check-label rounded-0 mt-2 ms-2" for="rgbInterpolation">RGB</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input list-options" type="radio" name="interpolation" id="hslInterpolation" value="hslInterpolation">
+                                <input class="form-check-input list-options-radio" type="radio" name="interpolation" id="hslInterpolation" value="hslInterpolation">
                                 <label class="form-check-label mt-2 ms-2" for="hslInterpolation">HSL</label>
                             </div>
                           </fieldset>
                         </div>
                     </div>
                     <div class="form-floating p-0 m-0 col ">
-                        <input id="intSteps" type="text" aria-label="After list" class="form-control list-options" oninput="this.value=this.value.replace(/[^0-9]/g,'');"  value="2">
+                        <input id="intSteps" type="text" aria-label="After list" class="form-control list-options-text" oninput="this.value=this.value.replace(/[^0-9]/g,'');"  value="2">
                         <label for="intSteps" class="  form-label col-12  ">Gradient Steps (integer)</label>
                     </div>
                   </div>
               </div>
               <div class="row p-0 m-0 pb-5 d-flex">
                   <div class="form-floating   m-0 p-0  col ">
-                    <input id="beforeList" type="text" aria-label="Before list" class="form-control list-options" value="const col = {">
+                    <input id="beforeList" type="text" aria-label="Before list" class="form-control list-options-text" value="const col = {">
                     <label for="beforeList" class="form-label col-12">Before List</label>
                   </div>
                   <div class="form-floating   m-0 p-0   col">
-                    <input id="afterList" type="text" aria-label="After list" class="form-control list-options" value="}">
+                    <input id="afterList" type="text" aria-label="After list" class="form-control list-options-text" value="}">
                     <label for="afterList" class="  form-label col-12">After List</label>
                   </div>
               </div>
@@ -142,57 +142,57 @@
                   <fieldset> 
                   <legend>List Colour format</legend>
                   <div class="form-check form-check-inline  ">
-                    <input class="form-check-input list-options" type="radio" name="inlineRadioOptions" id="hexformat-input" value="hexformat" checked>
+                    <input class="form-check-input list-options-radio" type="radio" name="inlineRadioOptions" id="hexformat-input" value="hexformat" checked>
                     <label class="form-check-label mt-2 ms-2" for="hexformat-input" >HEX</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input list-options" type="radio" name="inlineRadioOptions" id="rgbformat-input" value="rgbformat">
+                    <input class="form-check-input list-options-radio" type="radio" name="inlineRadioOptions" id="rgbformat-input" value="rgbformat">
                     <label class="form-check-label rounded-0 mt-2 ms-2" for="rgbformat-input">RGB</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input list-options" type="radio" name="inlineRadioOptions" id="hslformat-input" value="hslformat">
+                    <input class="form-check-input list-options-radio" type="radio" name="inlineRadioOptions" id="hslformat-input" value="hslformat">
                     <label class="form-check-label mt-2 ms-2" for="hslformat-input">HSL</label>
                   </div>
                 </fieldset>
                   <div class="pt-4">
                     <div class="row p-0 m-0 pb-5 d-flex" id="hexformat">
                         <div class="form-floating   m-0 p-0  col">
-                          <input id="beforeHEX" type="text" aria-label="Before hexhex value" class="form-control list-options" value="#">
+                          <input id="beforeHEX" type="text" aria-label="Before hexhex value" class="form-control list-options-text" value="#">
                           <label for="beforeHEX" class="form-label col-12">Before Colour</label>
                         </div>
                         <div class="form-floating   m-0 p-0  col">
-                          <input id="afterHEX" type="text" aria-label="After HEX value" value=",  " class="form-control list-options">
+                          <input id="afterHEX" type="text" aria-label="After HEX value" value=",  " class="form-control list-options-text">
                           <label for="afterHEX" class="form-label col-12">After Colour</label>
                         </div>
                     </div>
                     <div class=" d-none " id="rgbformat">
                         <div class="input-group m-0 p-0 mb-4">
                           <div class="form-floating m-0 p-0 col">
-                              <input id="beforeRed" type="text" aria-label="Before Red Value" class="form-control list-options" value="rgb(">
+                              <input id="beforeRed" type="text" aria-label="Before Red Value" class="form-control list-options-text" value="rgb(">
                               <label for="beforeRed" class="form-label col-12">Before Red</label>
                           </div>
                           <div class="form-floating m-0 p-0 col">
-                              <input id="afterRed" type="text" aria-label="After Red Value" class="form-control list-options" value=", ">
+                              <input id="afterRed" type="text" aria-label="After Red Value" class="form-control list-options-text" value=", ">
                               <label for="afterRed" class="form-label col-12">After Red</label>
                           </div>
                         </div>
                         <div class="input-group m-0 p-0 mb-4">
                           <div class="form-floating m-0 p-0 col">
-                              <input id="beforeGreen" type="text" aria-label="Before Green Value" class="form-control list-options">
+                              <input id="beforeGreen" type="text" aria-label="Before Green Value" class="form-control list-options-text">
                               <label for="beforeGreen" class="form-label col-12">Before Green</label>
                           </div>
                           <div class="form-floating m-0 p-0 col">
-                              <input id="afterGreen" type="text" aria-label="After Green Value" class="form-control list-options" value=",">
+                              <input id="afterGreen" type="text" aria-label="After Green Value" class="form-control list-options-text" value=",">
                               <label for="afterGreen" class="form-label col-12">After Green</label>
                           </div>
                         </div>
                         <div class="input-group m-0 p-0 mb-4">
                           <div class="form-floating m-0 p-0 col">
-                              <input id="beforeBlue" type="text" aria-label="Before Blue Value" class="form-control list-options">
+                              <input id="beforeBlue" type="text" aria-label="Before Blue Value" class="form-control list-options-text">
                               <label for="beforeBlue" class="form-label col-12">Before Blue</label>
                           </div>
                           <div class="form-floating m-0 p-0 col">
-                              <input id="afterBlue" type="text" aria-label="After Blue Value" class="form-control list-options" value="), ">
+                              <input id="afterBlue" type="text" aria-label="After Blue Value" class="form-control list-options-text" value="), ">
                               <label for="afterBlue" class="form-label col-12">After Blue</label>
                           </div>
                         </div>
@@ -200,31 +200,31 @@
                     <div class=" d-none " id="hslformat">
                         <div class="input-group m-0 p-0 mb-4">
                           <div class="form-floating m-0 p-0 col">
-                              <input id="beforeH" type="text" aria-label="Before Hue Value" class="form-control list-options" value="hsl(">
+                              <input id="beforeH" type="text" aria-label="Before Hue Value" class="form-control list-options-text" value="hsl(">
                               <label for="beforeH" class="form-label col-12">Before Hue</label>
                           </div>
                           <div class="form-floating m-0 p-0 col">
-                              <input id="afterH" type="text" aria-label="After Hue Value" class="form-control list-options" value="deg, ">
+                              <input id="afterH" type="text" aria-label="After Hue Value" class="form-control list-options-text" value="deg, ">
                               <label for="afterH" class="form-label col-12">After Hue</label>
                           </div>
                         </div>
                         <div class="input-group m-0 p-0 mb-4">
                           <div class="form-floating m-0 p-0 col">
-                              <input id="beforeS" type="text" aria-label="Before Saturation Value" class="form-control list-options" value=" ">
+                              <input id="beforeS" type="text" aria-label="Before Saturation Value" class="form-control list-options-text" value=" ">
                               <label for="beforeS" class="form-label col-12">Before Saturation</label>
                           </div>
                           <div class="form-floating m-0 p-0 col">
-                              <input id="afterS" type="text" aria-label="After Saturation Value" class="form-control list-options" value="%, ">
+                              <input id="afterS" type="text" aria-label="After Saturation Value" class="form-control list-options-text" value="%, ">
                               <label for="afterS" class="form-label col-12">After Saturation</label>
                           </div>
                         </div>
                         <div class="input-group m-0 p-0 mb-4">
                           <div class="form-floating m-0 p-0 col">
-                              <input id="beforeL" type="text" aria-label="Before Luminance Value" class="form-control list-options">
+                              <input id="beforeL" type="text" aria-label="Before Luminance Value" class="form-control list-options-text">
                               <label for="beforeL" class="form-label col-12">Before Luminance</label>
                           </div>
                           <div class="form-floating m-0 p-0 col">
-                              <input id="afterL" type="text" aria-label="After Luminance Value" class="form-control list-options" value="%), ">
+                              <input id="afterL" type="text" aria-label="After Luminance Value" class="form-control list-options-text" value="%), ">
                               <label for="afterL" class="form-label col-12">After Luminance</label>
                           </div>
                         </div>
