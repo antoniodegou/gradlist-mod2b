@@ -35,7 +35,6 @@ const removeButtonListener = (e) => {
     let getElementDelete = e.target.parentNode.getAttribute("data-col")
     spotColList = spotColList.filter((e, i) => i.toString() != getElementDelete)
 
-    // console.log(spotColList)
     //remove from dom
     e.target.parentNode.remove()
     //reorder dom index number
