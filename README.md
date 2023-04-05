@@ -2,11 +2,11 @@
 
 GradList is an App that is both a colour converter and generates a list of colours of the gradients between colours.
 
-Visit the deployed site: [GradList](https://antoniodegou.github.io/gradlist-mod2/)
+Visit the deployed site: [GradList](https://antoniodegou.github.io/gradlist-mod2b/)
 
 
 
-![Antonio de gou is responsive](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/reponsiveMockUP.jpg)
+![Antonio de gou is responsive](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/reponsiveMockUP.jpg)
 
 ---
 
@@ -78,6 +78,30 @@ The primary audience is generative artists or people who must work with colour l
 * Preview colours if you are doing colour studies.
 * Test colour schemes with light and dark modes. 
 
+1. Converter Section
+* Convert between colour formats (HEX, RGB, HSL, CSS colour names)
+* Get formats from the colour picker
+* Add Colour to spot colours with the "Add Colour" button
+
+2. Spot Colour Section
+* Visualise added colours
+* Delete any of the spot colours
+* Visualise a gradient made of spot colours
+
+3. List Options Section
+* change gradient mode
+* changing gradient steps between colours
+* change text before and after the list
+* Change text before and after each colour
+
+4. Your List
+* visualise list
+* visualise list colour swatches
+* use copy Button to copy the list to the system clipboard
+
+
+
+___
 
 ## Design
 
@@ -95,14 +119,14 @@ Because of the nature of the App, the colour has to be based on black and white,
 
 Nowadays, black and white can feel a bit dated, jarring, and painful to the eye. So I decided to have off tones for dark mode and white mode. To have a sense of sophistication and modernity.
 
-<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/baseColours.jpg" width="60%" alt="Base Colours">
+<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/baseColours.jpg" width="60%" alt="Base Colours">
 
 
 Because of form validation, I decided to rely on green for valid and red for invalid; the respective tones are slightly adjusted when in dark or white mode. Therefore, I decided to rely on the traffic light system and used yellow as the accent colour for the rest of the website.
 
-<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/othercolours1.jpg" width="60%" alt="valid invalid dark mode">
+<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/othercolours1.jpg" width="60%" alt="valid invalid dark mode">
 
-<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/othercolours2.jpg" width="60%" alt="valid invalid light mode">
+<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/othercolours2.jpg" width="60%" alt="valid invalid light mode">
 
 
 
@@ -116,27 +140,30 @@ Sentient - for code text and warnings
 
 Icomoon -  I used icomoon to produce a font with all the icons I needed.
 
-![typography](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/types.jpg)
+![typography](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/types.jpg)
 
 ### Wireframes
 
-Wireframes were made with adobe XD.
+Wireframes were made with Adobe XD.
 
 <details>
 <summary>See Desktop</summary>
 
-![Desktop Mockup](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/mockup-laptop.jpg) 
+![Desktop Mockup](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/mockup-laptop.jpg) 
 </details>
 
 <details><summary>See Tablet</summary> 
 
-![Tablet Mockup](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/mockup-mobile.jpg) 
+![Tablet Mockup](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/mockup-mobile.jpg) 
 </details>
 
 <details><summary>See Mobile</summary> 
 
-![Mobile Mockup](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/mockup-tablet.jpg) 
+![Mobile Mockup](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/mockup-tablet.jpg) 
 </details>
+
+
+___
 
 ## Features
 
@@ -151,7 +178,7 @@ Wireframes were made with adobe XD.
 
 #### Converter:
 
-<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/feat_converter.jpg" width="60%" alt="Converter">
+<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/feat_converter.jpg" width="60%" alt="Converter">
 
 Five input options exist for Hex, RGB, HSL, CSS colours and a colour picker.
 All fields have form validation so they can say if the format is accepted or not.
@@ -168,7 +195,7 @@ The list is updated automatically once you unfocus from the field or press enter
 
 #### Spot Colours:
 
-<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/feat_spot.jpg" width="60%" alt="Spot Colours">
+<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/feat_spot.jpg" width="60%" alt="Spot Colours">
 
 Spot colour shows the colours added from the "add colour" button.
 Each colour swatch is generated with a minus button to let you delete the colour.
@@ -177,7 +204,7 @@ The preview gradient is updated as you add or subtract spot colours.
 
 #### Options:
 
-<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/feat_options.jpg" width="60%" alt="Options">
+<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/feat_options.jpg" width="60%" alt="Options">
 
 
 The options on the list are pretty extensive without being overwhelming.
@@ -202,7 +229,7 @@ The list is updated automatically once you unfocus from the field or press enter
 
 #### Output:
 
-<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/feat_output.jpg" width="60%" alt="Output">
+<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/feat_output.jpg" width="60%" alt="Output">
  
 
 It shows a window with the user's final list output.
@@ -285,9 +312,10 @@ I used `Colorjs.io` to calculate my gradient steps and output a list.
 
 [ColorJS.io](https://colorjs.io/)
 
-
+___
 
 ### Local Development
+
 #### How to Fork
 To fork the repository:
 
@@ -339,9 +367,13 @@ npm run preview
 
 The deployment settings are in the "vite.config.js" file at the project's root.
 
+___
+
 ## Testing & Bugs
 See TESTING.md for the full breakdown of testing & bugs
-[here](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/TESTING.md)
+[here](https://github.com/antoniodegou/gradlist-mod2b/blob/main/TESTING.md)
+
+___
 
 ## Credits
 
