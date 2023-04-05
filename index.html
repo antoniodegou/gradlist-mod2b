@@ -15,13 +15,13 @@
     <div class="row justify-content-center w-100 m-auto">
 
         <!-- header -->
-        <header class="row col-12">
-          <div class=" pb-4 pt-4 d-flex justify-content-center align-items-center">
+        <header class="row col-12" >
+          <div class=" pb-4 pt-4 pe-0 ps-0 d-flex justify-content-center align-items-center" >
             <div class="  col-6 m-0 p-0  ">
               <h1 class="  m-0   pe-3 lh-1">gradList</h1>
-              <p class="  m-0 lh-1">create lists of gradient colours</p>
+              <p class="  m-0 lh-3">Generate gradient colour lists/arrays for you generative programs</p>
             </div>
-            <div class=" d-flex col-6  m-0  p-0   align-self-end  justify-content-end align-items-center    ">
+            <div class=" d-flex col-6  m-0  p-0    justify-content-end align-items-center    ">
               <input type="checkbox" id="my_switch">
               <label class="my_switch_label fs1" for="my_switch">
                   <span class="icon-moon"></span>
@@ -33,7 +33,7 @@
         </header>
 
         <!-- converter -->
-        <section class="row  col-12  col-md-5 me-md-3 mb-4   ">
+        <section class="row  col-12  col-md-7 me-md-3 mb-4   ">
             <div   class="mybox rounded-2">
               <div class="  p-0 m-0   p-4  ">
                 <h2 class="m-0 p-0  ">Converter</h2>
@@ -60,12 +60,12 @@
                     <label for="CSScolours" class="form-label col-12">CSS keywords (approximated value)</label>
                     <datalist id="datalistOptions"></datalist>
                 </div>
-                <div class="input-group p-0  col-12">
-                    <div class="">
-                      <div class="col pb-3 mt-3">
+                <div class="col-12  ">
+                    <div class="row ">
+                      <div class="col-6  ">
                           <input id="mypick" class="form-control converter" type="color" name="head" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" data-icon="&#xe90a;" title="Colour Picker">
                       </div>
-                      <div class="col  pt-3">
+                      <div class="col-6 ">
                           <input type="submit" id="submit" class="my_submit p-1 ps-4 pe-4 w-100" value="Add Colour" disabled>
                       </div>
                     </div>
@@ -75,7 +75,7 @@
         </section>
 
         <!-- spot colours  -->
-        <section class="row   col-12 col-md-7  mb-4   ">
+        <section class="row   col-12 col-md-5  mb-4   ">
             <div class="  mybox rounded-2 container p-4 pt-0">
               <div class="row">
                 <div class="col-12 p-4 pb-0">
@@ -237,7 +237,7 @@
         <section class="row col-12 col-md-7  mb-4  ">
           <div class="mybox rounded-2 container">
             <div class="p-4 pb-0  col-12">
-              <h2 class="p-0 m-0">Your List:</h2>
+              <h2 class="p-0 m-0">Your List</h2>
             </div>
             <div class="p-4   align-self-start position-relative col-12 align-self-start justify-left-start ">
               <div id="my-list" class="p-4 font-monospace">
