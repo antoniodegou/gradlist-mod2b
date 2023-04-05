@@ -41,62 +41,58 @@ const outputList = ( spotColList2 )=> {
 }
 const ifHEX = (finallist, mySpace, thelist, intSteps ,spotColList) => {
 
-    console.log(spotColList)
     const beforeList = document.getElementById('beforeList').value
     const afterList = document.getElementById('afterList').value
-        //get the value of hex that from the user
-        const beforeHEX = document.getElementById('beforeHEX').value
-        const afterHEX = document.getElementById('afterHEX').value
-        // re init the preview HTML
-        yourPreview.innerHTML = ''
-        // if the list only has one element chose that one colour for preview and colour list
-        if(spotColList.length == 0){
-            yourList.innerHTML = `<pre>${beforeList}<br> <br>${afterList}</pre>`
-        }
+    //get the value of hex that from the user
+    const beforeHEX = document.getElementById('beforeHEX').value
+    const afterHEX = document.getElementById('afterHEX').value
+    // re init the preview HTML
+    yourPreview.innerHTML = ''
 
-        if(spotColList.length == 1){
-            finallist = document.getElementById('hex_code').value;
-            yourPreview.innerHTML += `<div class="swatch d-inline-block" style="background-color:#${finallist}"></div>`
-            yourList.innerHTML = `<pre>${beforeList}<br>#${finallist}<br>${afterList}</pre>`
-        }
-        // If if larger than 1 compute the gradients
-        if(spotColList.length > 1){
+    // check if there are no colours on the list
+    if(spotColList.length == 0){
+        yourList.innerHTML = `<pre>${beforeList}<br> <br>${afterList}</pre>`
+    }
+    // check if there is only 1 element in the list
+    if(spotColList.length == 1){
+        finallist = document.getElementById('hex_code').value;
+        yourPreview.innerHTML += `<div class="swatch d-inline-block" style="background-color:#${finallist}"></div>`
+        yourList.innerHTML = `<pre>${beforeList}<br>#${finallist}<br>${afterList}</pre>`
+    }
+    
+    // If it's larger than 1 compute the gradients
+    if(spotColList.length > 1){
 
-            for(let x = 0; x < spotColList.length; x++){
-                let getGradient = ''  // Make it accessable
-                let c1 = new Color(`#${spotColList[x]}`) // choose current colour
-                // Check that it doesnt search for the next colour on the last item of array
-                if(x < spotColList.length - 1){
-                    // Get gradient values with options
-                    getGradient =  c1.steps(`#${spotColList[x+1]}`, {
-                            space: mySpace,
-                            outputSpace: "hsl",
-                            steps: parseInt(intSteps) + 2 // Need to add 2 to account for the spot colours
-                    });
-                }
-                let gradArray = Object.entries(getGradient) // convert to array
-                // Take the last one and the first one so there is no repeats in all arrays
-                gradArray.pop()
-                gradArray.shift()
-                // Parse colours and convert them to hex
-                let trans = gradArray.map(col =>{
-                    let convHex = convert.hsl.hex(parseInt(col[1].coords[0]), parseInt(col[1].coords[1]), parseInt(col[1].coords[2]))
-                    return    beforeHEX + convHex + afterHEX
-                })
-                // Add spot colour and add gradient colours
-                thelist.push(`${beforeHEX}${spotColList[x]}${afterHEX}`)
-                thelist.push(...trans)
-            }
-
-            // Take the afterHEX out of the last element,
-            thelist[ thelist.length-1 ] = thelist[thelist.length-1].replace(afterHEX,'')
-            // Add to swatches
-            thelist.forEach(hey =>{
-                yourPreview.innerHTML += `<div class="swatch d-inline-block" style="background-color:${hey.replace(afterHEX,'')}"></div>`
+        for(let x = 0; x < spotColList.length; x++){
+            // get gradient values for the list
+            let getGradienta = getGradient(x, spotColList, mySpace, 'hsl', intSteps) 
+            // convert to array
+            let gradArray = Object.entries(getGradienta) 
+            // remove first and last to avoid repeats
+            gradArray.pop()
+            gradArray.shift()
+            // Parse colours and convert them to hex
+            let trans = gradArray.map(col =>{
+                let convHex = convert.hsl.hex(parseInt(col[1].coords[0]), parseInt(col[1].coords[1]), parseInt(col[1].coords[2]))
+                return    beforeHEX + convHex + afterHEX
             })
-            // Add to preview
-            yourList.innerHTML = `<pre>${beforeList}<br>${thelist.join('') }<br>${afterList}</pre>`
+            // Add spot colour and add gradient colours
+            thelist.push(`${beforeHEX}${spotColList[x]}${afterHEX}`)
+            thelist.push(...trans)
         }
+
+        // Take the afterHEX out of the last element,
+        thelist[ thelist.length-1 ] = thelist[thelist.length-1].replace(afterHEX,'')
+
+        // Add to swatches : take all the chars that are not part of colour for the DOM
+        thelist.forEach(hey =>{
+           let a =  hey.replace(beforeHEX, '').replace(afterHEX,'')
+            yourPreview.innerHTML += `<div class="swatch d-inline-block" style="background-color:#${a}"></div>`
+        })
+
+        // Add to preview
+        yourList.innerHTML = `<pre>${beforeList}<br>${thelist.join('')}<br>${afterList}</pre>`
+    }
 }
 
 const ifRGB = (finallist, mySpace, thelist, intSteps,spotColList ) => {
@@ -124,18 +120,11 @@ const ifRGB = (finallist, mySpace, thelist, intSteps,spotColList ) => {
         if(spotColList.length > 1){
             let hexforSwatches = []
             for(let x = 0; x < spotColList.length; x++){
-                let getGradient = ''  // make it accessable
-                let c1 = new Color(`#${spotColList[x]}`) // choose current colour
-                // check that it doesnt search for the next colour on the last item of array
-                if(x < spotColList.length - 1){
-                    //get gradient values with options
-                    getGradient =  c1.steps(`#${spotColList[x+1]}`, {
-                            space: mySpace,
-                            outputSpace: "hsl",
-                            steps: parseInt(intSteps) + 2 // need to add 2 to account for the spot colours
-                    });
-                }
-                let gradArray = Object.entries(getGradient) // convert to array
+
+                // get gradient values for the list
+                let getGradienta = getGradient(x, spotColList, mySpace, 'hsl', intSteps) 
+                // convert to array
+                let gradArray = Object.entries(getGradienta) 
                 //take the last one and the first one so there is no repeats in all arrays
                 gradArray.pop()
                 gradArray.shift()
@@ -191,20 +180,10 @@ const ifHSL = (finallist, mySpace, thelist, intSteps,spotColList ) => {
             let hexforSwatches = [] // Array to collect hex colours for swatches
 
             for(let x = 0; x < spotColList.length; x++){
-                let getGradient = ''  // make it accessable
-                let c1 = new Color(`#${spotColList[x]}`) // choose current colour
-
-                // check that it doesnt search for the next colour on the last item of array
-                if(x < spotColList.length - 1){
-                    //get gradient values with options
-                    getGradient =  c1.steps(`#${spotColList[x+1]}`, {
-                            space: mySpace,
-                            outputSpace: "hsl",
-                            steps: parseInt(intSteps) + 2 // need to add 2 to account for the spot colours
-                    });
-                }
-
-                let gradArray = Object.entries(getGradient) // convert to array
+                // get gradient values for the list
+                let getGradienta = getGradient(x, spotColList, mySpace, 'hsl', intSteps) 
+                // convert to array
+                let gradArray = Object.entries(getGradienta) 
                 //take the last one and the first one so there is no repeats in all arrays
                 gradArray.pop()
                 gradArray.shift()
@@ -213,7 +192,6 @@ const ifHSL = (finallist, mySpace, thelist, intSteps,spotColList ) => {
                 let trans = gradArray.map(col =>{
                     let convHex = convert.hsl.hex(parseInt(col[1].coords[0]), parseInt(col[1].coords[1]), parseInt(col[1].coords[2]))
                     hexforSwatches.push(convHex)
-                    // let convRGB = convert.hsl.rgb(parseInt(col[1].coords[0]), parseInt(col[1].coords[1]), parseInt(col[1].coords[2]))
                     return    beforeH + parseInt(col[1].coords[0]) + afterH + beforeS + parseInt(col[1].coords[1]) + afterS + beforeL + parseInt(col[1].coords[2]) + afterL
                 })
                 //add spot colour and add gradient colours
@@ -230,6 +208,21 @@ const ifHSL = (finallist, mySpace, thelist, intSteps,spotColList ) => {
             //add to preview
             yourList.innerHTML = `<pre>${beforeList}<br>${thelist.join('') }<br>${afterList}</pre>`
         }
+}
+
+
+const getGradient = (x, list, space, outputSpace, steps) => {
+    let getGradientVals = '' // Make it accessable
+    const c1 =  new Color(`#${list[x]}`) // get first colours
+    if(x < list.length - 1){
+        // Get gradient values with options
+        getGradientVals =  c1.steps(`#${list[x+1]}`, {
+            space: space,
+            outputSpace: outputSpace,
+            steps: parseInt(steps) + 2 // Need to add 2 to account for the spot colours
+        });
+    }
+    return getGradientVals
 }
 
 export default outputList
