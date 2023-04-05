@@ -5,7 +5,7 @@ import spotColList from '/assets/js/addRemove'
 */
 
 const spotPrev = document.getElementById("gradpreview")
-const colPreview = () => {
+const colPreview = ( spotColList) => {
     let arr = spotColList.map((i) => "#" + i).join(" , ")
     let len = spotColList.length
     spotPrev.style.transition = "all 1s";

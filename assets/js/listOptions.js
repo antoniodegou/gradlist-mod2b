@@ -1,6 +1,7 @@
 import spotColList from '/assets/js/addRemove'
 import Color from "colorjs.io"
 import * as convert from 'color-convert'
+ 
 
 let listOptions = document.querySelectorAll(".list-options")
 const yourList = document.getElementById('my-list')
@@ -9,14 +10,14 @@ const yourPreview = document.getElementById('swatches-preview')
 listOptions.forEach( elem => {
     elem.addEventListener('change', (e) =>{
         e.preventDefault();
-        outputList()
+        outputList(spotColList)
     })
 })
 
 /*
 // Handle Options for the final list
 */
-const outputList = ()=> {
+const outputList = (spotColList)=> {
 
     const intRGB = document.getElementById('rgbInterpolation').checked
     const intHSL = document.getElementById('hslInterpolation').checked
@@ -36,17 +37,17 @@ const outputList = ()=> {
     let thelist =[];
 
     if(formatHEX){
-        ifHEX(finallist,mySpace, thelist,intSteps)
+        ifHEX(finallist, mySpace, thelist,intSteps,spotColList)
         
     }else if(formatRGB){
-        ifRGB(finallist, mySpace, thelist, intSteps)
+        ifRGB(finallist, mySpace, thelist, intSteps,spotColList)
 
     }else if(formatHSL){
-        ifHSL(finallist, mySpace, thelist, intSteps)
+        ifHSL(finallist, mySpace, thelist, intSteps,spotColList)
 
     }
 }
-const ifHEX = (finallist, mySpace, thelist, intSteps) => {
+const ifHEX = (finallist, mySpace, thelist, intSteps,spotColList) => {
     const beforeList = document.getElementById('beforeList').value
     const afterList = document.getElementById('afterList').value
         //get the value of hex that from the user
@@ -100,7 +101,7 @@ const ifHEX = (finallist, mySpace, thelist, intSteps) => {
         }
 }
 
-const ifRGB = (finallist, mySpace, thelist, intSteps) => {
+const ifRGB = (finallist, mySpace, thelist, intSteps,spotColList) => {
     const beforeList = document.getElementById('beforeList').value
     const afterList = document.getElementById('afterList').value
         // Get the options for RGB
@@ -162,7 +163,7 @@ const ifRGB = (finallist, mySpace, thelist, intSteps) => {
 
 }
 
-const ifHSL = (finallist, mySpace, thelist, intSteps) => {
+const ifHSL = (finallist, mySpace, thelist, intSteps,spotColList) => {
     const beforeList = document.getElementById('beforeList').value
     const afterList = document.getElementById('afterList').value
         // Get the options for HSL values
