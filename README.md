@@ -408,4 +408,6 @@ ___
 	* https://www.w3schools.com/js/js_htmldom.asp
 	* https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
 
+10. Copy to the clipboard
 
+	* https://www.w3schools.com/howto/howto_js_copy_clipboard.asp

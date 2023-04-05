@@ -48,8 +48,15 @@ const removeButtonListener = (e) => {
 
 
 // event listener for user's colour option list
-document.querySelectorAll(".list-options").forEach( elem => {
+document.querySelectorAll(".list-options-radio").forEach( elem => {
     elem.addEventListener('change', (e) =>{
+        e.preventDefault();
+        outputList( spotColList)
+    })
+})
+
+document.querySelectorAll(".list-options-text").forEach( elem => {
+    elem.addEventListener('keyup', (e) =>{
         e.preventDefault();
         outputList( spotColList)
     })
@@ -58,7 +65,7 @@ document.querySelectorAll(".list-options").forEach( elem => {
 // event for the copy button that copies the list to clipboard
 document.getElementById('copy').addEventListener('click', e => {
     e.preventDefault()
-    // ref https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+    
     var copyText = document.getElementById('my-list')
     navigator.clipboard.writeText(copyText.innerText)
 })
