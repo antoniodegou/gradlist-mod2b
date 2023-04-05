@@ -44,7 +44,7 @@ Due to its nature, it will not live-reload as soon as there is any error on CSS 
 
 ---
  
-## Manual Testing
+## Testing
 
 ### Tools for testing
 
@@ -72,6 +72,12 @@ Due to its nature, it will not live-reload as soon as there is any error on CSS 
 * Get formats from the colour picker
 
 The colour picker works in all instances, and all the other inputs get converted from the colour picker colour.
+
+
+### Header
+
+Toggle (dark/light mode) works in all devices that I tested in as well as all the browsers.
+It all captures users light/dark preferences and presents that first.
 
 
 ### Spot Colours Section

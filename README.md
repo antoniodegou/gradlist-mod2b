@@ -72,11 +72,6 @@ The primary audience is generative artists or people who must work with colour l
 
 #### Client goals, first-time and returning visitors 
 
-* Intuitive feel for how the website works
-* Convert colours to the wanted format.
-* Get a list of colours in whatever formatting is needed.
-* Preview colours if you are doing colour studies.
-* Test colour schemes with light and dark modes. 
 
 1. Converter Section
 * Convert between colour formats (HEX, RGB, HSL, CSS colour names)
