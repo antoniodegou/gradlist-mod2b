@@ -1,18 +1,10 @@
-import spotColList from '/assets/js/addRemove'
+ 
 import Color from "colorjs.io"
 import * as convert from 'color-convert'
  
-
-let listOptions = document.querySelectorAll(".list-options")
+ 
 const yourList = document.getElementById('my-list')
 const yourPreview = document.getElementById('swatches-preview')
-
-document.querySelectorAll(".list-options").forEach( elem => {
-    elem.addEventListener('change', (e) =>{
-        e.preventDefault();
-        outputList( spotColList)
-    })
-})
 
 /*
 // Handle Options for the final list
@@ -233,7 +225,7 @@ const ifHSL = (finallist, mySpace, thelist, intSteps,spotColList ) => {
 
             // add to swatches
             hexforSwatches.forEach(hey =>{
-                yourPreview.innerHTML += ` <div class="swatch d-inline-block" style="background-color: #${hey.replace(afterL,'')}"></div>`
+                yourPreview.innerHTML += ` <div class="swatch d-inline-block" style="background-color:#${hey.replace(afterL,'')}"></div>`
             })
             //add to preview
             yourList.innerHTML = `<pre>${beforeList}<br>${thelist.join('') }<br>${afterList}</pre>`

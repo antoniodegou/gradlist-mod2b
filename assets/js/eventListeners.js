@@ -51,4 +51,11 @@ const removeButtonListener = (e) => {
 
 
 
-export default spotColList
+document.querySelectorAll(".list-options").forEach( elem => {
+    elem.addEventListener('change', (e) =>{
+        e.preventDefault();
+        outputList( spotColList)
+    })
+})
+ 
+ 

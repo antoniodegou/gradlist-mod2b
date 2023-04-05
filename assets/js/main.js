@@ -9,7 +9,7 @@ import '/assets/js/listColFormatDom'
 import '/assets/js/converterValidation'
 import '/assets/js/coloursPreview'
 import '/assets/js/listOptions'
-import '/assets/js/addRemove'
+import '/assets/js/eventListeners'
 
  
 
