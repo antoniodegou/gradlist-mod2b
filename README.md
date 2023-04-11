@@ -1,6 +1,7 @@
 # Gradlist 
 
-GradList is an App that is both a colour converter and generates a list of colours of the gradients between colours.
+GradList is a versatile application that empowers users to generate custom colour gradients by choosing their preferred colours and specifying the number of steps to include between them. Whether creating generative art, defining arrays, or crafting CSS, GradList offers a user-friendly solution for exploring and refining a wide range of colour palettes. With GradList, users can easily experiment with different colour combinations and gradients to achieve the desired visual effect, making it an indispensable tool for designers, artists, and anyone seeking to enhance their creative output.
+
 
 Visit the deployed site: [GradList](https://antoniodegou.github.io/gradlist-mod2b/)
 
@@ -35,7 +36,7 @@ Visit the deployed site: [GradList](https://antoniodegou.github.io/gradlist-mod2
   * [Local Development](#local-development)
 
 
-* [Testing](#testing)
+* [Testing](#testing-&-bugs)
 
 * [Credits](#credits)
 
@@ -175,27 +176,23 @@ ___
 
 <img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/feat_converter.jpg" width="60%" alt="Converter">
 
-Five input options exist for Hex, RGB, HSL, CSS colours and a colour picker.
-All fields have form validation so they can say if the format is accepted or not.
-All fields have field validation; if the format is correct, there with be a green tick symbol; if wrong, there will be a red cross.
-Hex and RGB fields use regex patterns to screen for validation
-HSL has a custom function to filter for Field Validation.
-CSS keyWords checks if colours are a part of the list and are prepopulated via Color-Convert API.
+The GradList app features a versatile converter section that includes five input options: Hex, RGB, HSL, CSS colours, and a colour picker. Each field has built-in form validation to ensure the correct input format. Users can easily identify valid inputs with a green tick symbol, while invalid inputs are marked with a red cross.
 
-The event listener connects all fields, and a lot is valid; all the other field change to the correct format.
+The Hex and RGB fields use regex patterns to screen for validation, while HSL employs a custom function. Additionally, the app checks CSS keywords against a prepopulated list using the Color-Convert API.
 
-The button to add colours to the list is only active if all fields are valid.
+An event listener connects all fields, and once a valid input is detected, all other fields automatically update to the correct format. The "add colour" button is only enabled when all fields contain valid inputs.
 
-The list is updated automatically once you unfocus from the field or press enter. 
+The app updates the list of colours automatically as the user types in a field or presses the enter key. With these intuitive features, the GradList converter offers users a seamless and user-friendly experience for generating custom colour palettes.
 
 #### Spot Colours:
 
 <img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2b/main/img/feat_spot.jpg" width="60%" alt="Spot Colours">
 
-Spot colour shows the colours added from the "add colour" button.
-Each colour swatch is generated with a minus button to let you delete the colour.
-There is a div where you can preview the gradient of chosen colours.
-The preview gradient is updated as you add or subtract spot colours.
+In the Spot Colour section of the website, users can view and manage the colours they have added by clicking the "add colour" button. Each colour is displayed as a swatch, with a minus button that allows users to delete the colours they no longer require.
+
+The website also features a preview gradient div, showing users the chosen colour gradients. As users add or subtract spot colours, the preview gradient automatically updates to reflect the changes made. This feature allows users to experiment with different combinations of colours and preview the results in real time.
+
+The Spot Colour section is a user-friendly tool enabling users to easily manage their colour selections, making it a valuable resource for designers, marketers, and other professionals who need to work with precise and consistent colours.
 
 #### Options:
 
@@ -411,3 +408,7 @@ ___
 10. Copy to the clipboard
 
 	* https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+
+11. Bootstrap API
+
+	* https://getbootstrap.com/docs/5.2/customize/components/
